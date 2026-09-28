@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVForge - Build Your Professional CV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing" class="landing-page">
+    <header class="landing-header">
+      <div class="logo">CVForge</div>
+    </header>
+    
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Build a CV that gets you noticed.</h1>
+        <p>Create a professional CV in minutes with our intuitive builder and professional templates. No experience needed.</p>
+        <button class="btn btn-primary btn-lg" id="createCVBtn">Create My CV</button>
+      </div>
+      <div class="hero-image">
+        <div class="cv-preview-hero">
+          <div class="cv-demo">
+            <div class="cv-header-demo">
+              <div class="cv-name-demo">Alex Johnson</div>
+              <div class="cv-title-demo">Product Designer</div>
+            </div>
+            <div class="cv-line"></div>
+            <div class="cv-section-demo">
+              <div class="cv-section-title-demo">Experience</div>
+              <div class="cv-item-demo">Senior Designer at TechCorp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Quick & Easy</h3>
+          <p>Build your CV in minutes with our guided form</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✓</div>
+          <h3>Professional Templates</h3>
+          <p>Choose from 3 sleek, ATS-friendly designs</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">↓</div>
+          <h3>Download as PDF</h3>
+          <p>Export your CV ready for job applications</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CV Builder Page -->
+  <div id="builder" class="builder-page hidden">
+    <div class="builder-header">
+      <div class="builder-logo">CVForge</div>
+      <div class="builder-actions">
+        <button class="btn btn-secondary" id="downloadBtn">Download PDF</button>
+        <button class="btn btn-outline" id="startOverBtn">Start Over</button>
+      </div>
+    </div>
+
+    <div class="builder-container">
+      <!-- Form Section -->
+      <div class="form-section">
+        <div class="form-wrapper">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="fullName" placeholder="John Smith">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Professional Title</label>
+              <input type="text" id="title" placeholder="Product Designer">
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" id="location" placeholder="New York, USA">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="email" placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Professional Summary</label>
+            <textarea id="summary" placeholder="Brief overview of your professional background, key skills, and career goals..." rows="4"></textarea>
+          </div>
+
+          <!-- Education Section -->
+          <div class="form-section-divider">
+            <h3>Education</h3>
+            <button class="btn btn-secondary btn-sm" id="addEducationBtn">+ Add Education</button>
+          </div>
+          <div id="educationContainer">
+            <div class="education-item">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>School/University</label>
+                  <input type="text" class="education-school" placeholder="University of Technology">
+                </div>
+                <div class="form-group">
+                  <label>Degree</label>
+                  <input type="text" class="education-degree" placeholder="Bachelor of Science">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Field of Study</label>
+                  <input type="text" class="education-field" placeholder="Computer Science">
+                </div>
+                <div class="form-group">
+                  <label>Graduation Year</label>
+                  <input type="text" class="education-year" placeholder="2022">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work Experience Section -->
+          <div class="form-section-divider">
+            <h3>Work Experience</h3>
+            <button class="btn btn-secondary btn-sm" id="addExperienceBtn">+ Add Experience</button>
+          </div>
+          <div id="experienceContainer">
+            <div class="experience-item">
+              <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" class="experience-title" placeholder="Senior Product Designer">
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" class="experience-company" placeholder="TechCorp Inc">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Start Year</label>
+                  <input type="text" class="experience-start" placeholder="2021">
+                </div>
+                <div class="form-group">
+                  <label>End Year (or "Present")</label>
+                  <input type="text" class="experience-end" placeholder="Present">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea class="experience-description" placeholder="Describe your key responsibilities and achievements..." rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Section -->
+          <div class="form-section-divider">
+            <h3>Skills</h3>
+          </div>
+          <div class="form-group">
+            <label>Enter skills separated by commas</label>
+            <textarea id="skills" placeholder="UI Design, Prototyping, Figma, User Research, Wireframing..." rows="3"></textarea>
+          </div>
+
+          <!-- Certifications Section -->
+          <div class="form-section-divider">
+            <h3>Certifications & Licenses</h3>
+            <button class="btn btn-secondary btn-sm" id="addCertificationBtn">+ Add Certification</button>
+          </div>
+          <div id="certificationContainer">
+            <div class="certification-item">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Certification Name</label>
+                  <input type="text" class="certification-name" placeholder="Certified UX Designer">
+                </div>
+                <div class="form-group">
+                  <label>Issuing Organization</label>
+                  <input type="text" class="certification-org" placeholder="Nielsen Norman Group">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Date Issued</label>
+                <input type="text" class="certification-date" placeholder="2023">
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages Section -->
+          <div class="form-section-divider">
+            <h3>Languages</h3>
+          </div>
+          <div class="form-group">
+            <label>Enter languages and proficiency separated by commas</label>
+            <textarea id="languages" placeholder="English (Native), Spanish (Fluent), French (Intermediate)..." rows="2"></textarea>
+          </div>
+
+          <!-- Template Selector -->
+          <div class="form-section-divider">
+            <h3>CV Template</h3>
+          </div>
+          <div class="template-selector">
+            <label class="template-option active">
+              <input type="radio" name="template" value="classic" checked>
+              <span class="template-name">Classic</span>
+              <span class="template-desc">Clean and professional</span>
+            </label>
+            <label class="template-option">
+              <input type="radio" name="template" value="modern">
+              <span class="template-name">Modern</span>
+              <span class="template-desc">Contemporary design</span>
+            </label>
+            <label class="template-option">
+              <input type="radio" name="template" value="minimal">
+              <span class="template-name">Minimal</span>
+              <span class="template-desc">Simple and focused</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Section -->
+      <div class="preview-section">
+        <div class="preview-header">
+          <h2>CV Preview</h2>
+          <button class="btn btn-primary btn-sm" id="downloadBtnSmall">Download PDF</button>
+        </div>
+        <div id="preview" class="cv-preview"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
